@@ -200,7 +200,7 @@ async def main() -> None:
         chat_client = OpenAIChatClient(
             base_url=os.environ.get("GITHUB_ENDPOINT", "https://models.inference.ai.azure.com"),
             api_key=github_token,
-            model_id="gpt-4o",
+            model_id=os.environ.get("GITHUB_MODEL_ID", "gpt-4o"),
         )
         print("Using GitHub Models provider")
     else:
